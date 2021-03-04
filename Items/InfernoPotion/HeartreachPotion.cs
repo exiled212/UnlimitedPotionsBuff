@@ -1,10 +1,10 @@
 ﻿using Terraria.ID;
 
-namespace UnlimitedPotisBuff.Items.WrathPotion {
-    public class WrathPotion : ItemBase {
+namespace UnlimitedPotisBuff.Items.InfernoPotion {
+    public class InfernoPotion : ItemBase {
 
         protected override string getName() {
-            return "Reliquia de ira";
+            return "Reliquia del infierno";
         }
 
         protected override string getDescription() {
@@ -12,11 +12,11 @@ namespace UnlimitedPotisBuff.Items.WrathPotion {
         }
 
         protected override int getItemId() {
-            return ItemID.WrathPotion; ;
+            return ItemID.InfernoPotion; ;
         }
 
         protected override int getBuffId() {
-            return BuffID.Wrath;
+            return BuffID.Inferno;
         }
 
         protected override int getRarityId() {
