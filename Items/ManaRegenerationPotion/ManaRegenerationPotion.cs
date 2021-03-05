@@ -12,7 +12,7 @@ namespace UnlimitedPotisBuff.Items.ManaRegenerationPotion {
         }
 
         protected override int GetItemId() {
-            return ItemID.ManaRegenerationPotion; ;
+            return ItemID.ManaRegenerationPotion;
         }
 
         protected override int GetBuffId() {

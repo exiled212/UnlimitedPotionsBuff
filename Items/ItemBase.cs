@@ -11,6 +11,13 @@ namespace UnlimitedPotisBuff.Items {
         protected abstract int GetBuffId();
         protected abstract int GetRarityId();
         protected abstract int GetTileId();
+        protected virtual int GetItemCount() { 
+            return 30; 
+        }
+
+        public int BuffId() {
+            return GetBuffId();
+        }
 
         public override void SetStaticDefaults() {
             DisplayName.SetDefault(GetName());
@@ -27,10 +34,8 @@ namespace UnlimitedPotisBuff.Items {
         }
 
         public override void AddRecipes() {
-            Item baseItem = GetBaseItem();
-
             ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(GetItemId(), baseItem.maxStack);
+            recipe.AddIngredient(GetItemId(), GetItemCount());
             recipe.AddIngredient(ItemID.LargeAmber, 1);
             recipe.AddIngredient(ItemID.LargeAmethyst, 1);
             recipe.AddIngredient(ItemID.LargeDiamond, 1);

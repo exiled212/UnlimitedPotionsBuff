@@ -11,7 +11,7 @@ namespace UnlimitedPotisBuff.Items.CratePotion {
         }
 
         protected override int GetItemId() {
-            return ItemID.CratePotion; ;
+            return ItemID.CratePotion;
         }
 
         protected override int GetBuffId() {

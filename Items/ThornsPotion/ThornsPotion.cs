@@ -12,7 +12,7 @@ namespace UnlimitedPotisBuff.Items.ThornsPotion {
         }
 
         protected override int GetItemId() {
-            return ItemID.ThornsPotion; ;
+            return ItemID.ThornsPotion;
         }
 
         protected override int GetBuffId() {
