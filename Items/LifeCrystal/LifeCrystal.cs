@@ -1,9 +1,10 @@
 ﻿using Terraria.ID;
 
-namespace UnlimitedPotisBuff.Items.HeartreachPotion {
-    public class HeartreachPotion : ItemBase {
+namespace UnlimitedPotisBuff.Items.LifeCrystal {
+    class LifeCrystal : ItemBase {
+
         protected override string GetName() {
-            return "Reliquia alcanzacorazón";
+            return "Reliquia del corazón de cristal";
         }
 
         protected override string GetDescription() {
@@ -11,11 +12,11 @@ namespace UnlimitedPotisBuff.Items.HeartreachPotion {
         }
 
         protected override int GetItemId() {
-            return ItemID.HeartreachPotion;
+            return ItemID.HeartLantern;
         }
 
         protected override int GetBuffId() {
-            return BuffID.Heartreach;
+            return BuffID.HeartLamp;
         }
 
         protected override int GetRarityId() {
@@ -23,7 +24,11 @@ namespace UnlimitedPotisBuff.Items.HeartreachPotion {
         }
 
         protected override int GetTileId() {
-            return TileID.AlchemyTable;
+            return TileID.TinkerersWorkbench;
+        }
+
+        protected override int GetItemCount() {
+            return 20;
         }
 
     }

@@ -1,9 +1,10 @@
 ﻿using Terraria.ID;
 
-namespace UnlimitedPotisBuff.Items.HeartreachPotion {
-    public class HeartreachPotion : ItemBase {
+namespace UnlimitedPotisBuff.Items.MagicPowerPotion {
+    public class MagicPowerPotion : ItemBase {
+
         protected override string GetName() {
-            return "Reliquia alcanzacorazón";
+            return "Reliquia de poder mágico";
         }
 
         protected override string GetDescription() {
@@ -11,11 +12,11 @@ namespace UnlimitedPotisBuff.Items.HeartreachPotion {
         }
 
         protected override int GetItemId() {
-            return ItemID.HeartreachPotion;
+            return ItemID.MagicPowerPotion;
         }
 
         protected override int GetBuffId() {
-            return BuffID.Heartreach;
+            return BuffID.MagicPower;
         }
 
         protected override int GetRarityId() {

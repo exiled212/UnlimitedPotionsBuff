@@ -1,46 +1,31 @@
-﻿
-
-using Terraria.ModLoader;
-using Terraria;
-using Terraria.ID;
+﻿using Terraria.ID;
 
 namespace UnlimitedPotisBuff.Items.RegenerationPotion {
-    public class RegenerationPotion: ModItem {
+    public class RegenerationPotion: ItemBase {
 
-        public static string NAME = "Reliquia de regeneración"; 
-        public static string DESCRIPTION = "Esta reliquia te provee de su poder con solo tenerla";
-        public static int ITEM_ID = ItemID.RegenerationPotion;
-        public static int BUFF_ID = BuffID.Regeneration;
-
-        public static int RARITY_ID = ItemRarityID.Orange;
-        public static int TILE_ID = TileID.AlchemyTable;
-
-        public override void SetStaticDefaults() {
-            DisplayName.SetDefault(NAME);
-            Tooltip.SetDefault(DESCRIPTION);
+        protected override string GetName() {
+            return "Reliquia de regeneración";
         }
 
-        public override void SetDefaults() {
-            Item refItem = new Item();
-            refItem.SetDefaults(ITEM_ID);
-            item.width = refItem.width;
-            item.height = refItem.height;
-            item.value = Item.sellPrice(platinum: 1);
-            item.rare = RARITY_ID;
-            item.maxStack = 1;
+        protected override string GetDescription() {
+            return "Esta reliquia te provee de su poder con solo tenerla";
         }
 
-        public override void AddRecipes() {
-            ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(ITEM_ID, 100);
-            recipe.AddTile(TILE_ID);
-            recipe.SetResult(this);
-            recipe.AddRecipe();
+        protected override int GetItemId() {
+            return ItemID.RegenerationPotion;
         }
 
-        public override void UpdateInventory(Player player) {
-            player.AddBuff(BUFF_ID, 1, false);
+        protected override int GetBuffId() {
+            return BuffID.Regeneration;
         }
-        
+
+        protected override int GetRarityId() {
+            return ItemRarityID.Orange;
+        }
+
+        protected override int GetTileId() {
+            return TileID.AlchemyTable;
+        }
+
     }
 }

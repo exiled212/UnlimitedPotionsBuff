@@ -1,9 +1,9 @@
 ﻿using Terraria.ID;
 
-namespace UnlimitedPotisBuff.Items.HeartreachPotion {
-    public class HeartreachPotion : ItemBase {
+namespace UnlimitedPotisBuff.Items.CratePotion {
+    class CratePotion : ItemBase {
         protected override string GetName() {
-            return "Reliquia alcanzacorazón";
+            return "Reliquia de caja";
         }
 
         protected override string GetDescription() {
@@ -11,11 +11,11 @@ namespace UnlimitedPotisBuff.Items.HeartreachPotion {
         }
 
         protected override int GetItemId() {
-            return ItemID.HeartreachPotion;
+            return ItemID.CratePotion;
         }
 
         protected override int GetBuffId() {
-            return BuffID.Heartreach;
+            return BuffID.Crate;
         }
 
         protected override int GetRarityId() {

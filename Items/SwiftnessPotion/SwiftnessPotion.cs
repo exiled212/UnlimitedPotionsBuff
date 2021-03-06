@@ -1,45 +1,30 @@
-﻿
-
-using Terraria.ModLoader;
-using Terraria;
-using Terraria.ID;
+﻿using Terraria.ID;
 
 namespace UnlimitedPotisBuff.Items.SwiftnessPotion {
-    public class SwiftnessPotion : ModItem {
+    public class SwiftnessPotion : ItemBase {
 
-        public static string NAME = "Reliquia de rapidez";
-        public static string DESCRIPTION = "Esta reliquia te provee de su poder con solo tenerla";
-        public static int ITEM_ID = ItemID.SwiftnessPotion;
-        public static int BUFF_ID = BuffID.Swiftness;
-
-        public static int RARITY_ID = ItemRarityID.Orange;
-        public static int TILE_ID = TileID.AlchemyTable;
-
-        public override void SetStaticDefaults() {
-            DisplayName.SetDefault(NAME);
-            Tooltip.SetDefault(DESCRIPTION);
+        protected override string GetName() {
+            return "Reliquia de rapidez";
         }
 
-        public override void SetDefaults() {
-            Item refItem = new Item();
-            refItem.SetDefaults(ITEM_ID);
-            item.width = refItem.width;
-            item.height = refItem.height;
-            item.value = Item.sellPrice(platinum: 1);
-            item.rare = RARITY_ID;
-            item.maxStack = 1;
+        protected override string GetDescription() {
+            return "Esta reliquia te provee de su poder con solo tenerla";
         }
 
-        public override void AddRecipes() {
-            ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(ITEM_ID, 100);
-            recipe.AddTile(TILE_ID);
-            recipe.SetResult(this);
-            recipe.AddRecipe();
+        protected override int GetItemId() {
+            return ItemID.SwiftnessPotion;
         }
 
-        public override void UpdateInventory(Player player) {
-            player.AddBuff(BUFF_ID, 1, false);
+        protected override int GetBuffId() {
+            return BuffID.Swiftness;
+        }
+
+        protected override int GetRarityId() {
+            return ItemRarityID.Orange;
+        }
+
+        protected override int GetTileId() {
+            return TileID.AlchemyTable;
         }
 
     }

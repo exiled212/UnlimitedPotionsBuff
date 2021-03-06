@@ -1,0 +1,31 @@
+﻿BuilderPotion: Poción constructora
+GillsPotion: Poción de agallas
+HeartreachPotion: Poción alcanzacorazón
+FlipperPotion: Poción de aletas
+ArcheryPotion: Poción de arquero
+BattlePotion: Poción de batalla
+ShinePotion: Poción de brillo
+CratePotion: Poción de caja
+HunterPotion: Poción de cazador
+SpelunkerPotion: Poción de espeleólogo
+ThornsPotion: Poción de espinas
+WaterWalkingPotion: Poción de flotación
+LifeforcePotion: Poción de fuerza vital
+RagePotion: Poción de furia
+GravitationPotion: Poción de gravedad
+SummoningPotion: Poción de invocación
+WrathPotion: Poción de ira
+MiningPotion: Poción de minería
+NightOwlPotion: Poción de noctámbulo
+FishingPotion: Poción de pesca
+IronskinPotion: Poción de piel de hierro
+ObsidianSkinPotion: Poción de piel de obsidiana
+MagicPowerPotion: Poción de poder mágico
+SwiftnessPotion: Poción de rapidez
+RegenerationPotion: Poción de regeneración
+ManaRegenerationPotion: Poción de regeneración de maná
+AmmoReservationPotion: Poción de reserva de munición
+EndurancePotion: Poción de resistencia
+DangersensePotion: Poción de sentido del peligro
+SonarPotion: Poción de sonar
+TitanPotion: Poción de titán
