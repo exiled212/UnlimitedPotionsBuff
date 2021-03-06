@@ -1,1 +1,1 @@
-Unlimited potis buff is a pretty cool mod, it does...this. Modify this file with a description of your mod.
+Este mod te permite crear objetos que proporcionan los buff de las opciones utilizables
