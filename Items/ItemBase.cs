@@ -1,6 +1,6 @@
 ﻿using Terraria.ModLoader;
 using Terraria;
-using Terraria.ID;
+using static Terraria.ModLoader.ModContent;
 
 namespace UnlimitedPotisBuff.Items {
     public abstract class ItemBase : ModItem {
@@ -36,13 +36,7 @@ namespace UnlimitedPotisBuff.Items {
         public override void AddRecipes() {
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(GetItemId(), GetItemCount());
-            recipe.AddIngredient(ItemID.LargeAmber, 1);
-            recipe.AddIngredient(ItemID.LargeAmethyst, 1);
-            recipe.AddIngredient(ItemID.LargeDiamond, 1);
-            recipe.AddIngredient(ItemID.LargeEmerald, 1);
-            recipe.AddIngredient(ItemID.LargeRuby, 1);
-            recipe.AddIngredient(ItemID.LargeSapphire, 1);
-            recipe.AddIngredient(ItemID.LargeTopaz, 1);
+            recipe.AddIngredient(ItemType<GemsLock.GemsLock>(), 1);
             recipe.AddTile(GetTileId());
             recipe.SetResult(this);
             recipe.AddRecipe();

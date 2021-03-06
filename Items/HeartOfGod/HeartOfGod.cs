@@ -35,6 +35,7 @@ namespace UnlimitedPotisBuff.Items.HeartOfGod {
             player.AddBuff(BuffID.Honey, 1, false);
             player.AddBuff(BuffID.Campfire, 1, false);
             player.AddBuff(BuffID.DryadsWard, 1, false);
+            player.AddBuff(BuffID.Regeneration, 1, false);
         }
 
         public override void AddRecipes() {
@@ -42,6 +43,7 @@ namespace UnlimitedPotisBuff.Items.HeartOfGod {
             recipe.AddIngredient(ItemType<FireHeartCrystal.FireHeartCrystal>(), 1);
             recipe.AddIngredient(ItemType<LifeCrystal.LifeCrystal>(), 1);
             recipe.AddIngredient(ItemType<HoneyHeartCrystal.HoneyHeartCrystal>(), 1);
+            recipe.AddIngredient(ItemType<RegenerationPotion.RegenerationPotion>(), 1);
             recipe.AddTile(GetTileId());
             recipe.SetResult(this);
             recipe.AddRecipe();

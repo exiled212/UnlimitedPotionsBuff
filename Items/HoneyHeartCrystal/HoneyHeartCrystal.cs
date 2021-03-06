@@ -1,5 +1,6 @@
 ﻿using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 
 namespace UnlimitedPotisBuff.Items.HoneyHeartCrystal {
     class HoneyHeartCrystal : ItemBase {
@@ -34,13 +35,7 @@ namespace UnlimitedPotisBuff.Items.HoneyHeartCrystal {
             recipe.AddIngredient(ItemID.HoneyCandelabra, 1);
             recipe.AddIngredient(ItemID.HoneyCandle, 1);
             recipe.AddIngredient(ItemID.HoneyLamp, 1);
-            recipe.AddIngredient(ItemID.LargeAmber, 1);
-            recipe.AddIngredient(ItemID.LargeAmethyst, 1);
-            recipe.AddIngredient(ItemID.LargeDiamond, 1);
-            recipe.AddIngredient(ItemID.LargeEmerald, 1);
-            recipe.AddIngredient(ItemID.LargeRuby, 1);
-            recipe.AddIngredient(ItemID.LargeSapphire, 1);
-            recipe.AddIngredient(ItemID.LargeTopaz, 1);
+            recipe.AddIngredient(ItemType<GemsLock.GemsLock>(), 1);
             recipe.AddTile(GetTileId());
             recipe.SetResult(this);
             recipe.AddRecipe();
