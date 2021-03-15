@@ -1,1 +1,1 @@
-Este mod te permite crear objetos que proporcionan los buff de las opciones utilizables
+Puede crear objetos que te den los buffs de las pociones mientras esten en tu inventario
