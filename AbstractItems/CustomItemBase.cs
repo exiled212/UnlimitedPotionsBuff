@@ -1,4 +1,4 @@
-﻿using UnlimitedPotisBuff.Items;
+﻿using UnlimitedPotionsBuffs.Items;
 using Terraria.ModLoader;
 using Terraria;
 

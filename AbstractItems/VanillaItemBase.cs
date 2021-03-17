@@ -1,7 +1,7 @@
-﻿using UnlimitedPotisBuff.Items;
+﻿using UnlimitedPotionsBuffs.Items;
 using static Terraria.ModLoader.ModContent;
 using Terraria.ModLoader;
-using UnlimitedPotisBuff.Ingredients.GemsLock;
+using UnlimitedPotionsBuffs.Ingredients.GemsLock;
 using Terraria;
 
 namespace UnlimitedPotionsBuffs.AbstractItems {

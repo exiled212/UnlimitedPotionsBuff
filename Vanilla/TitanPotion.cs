@@ -1,7 +1,7 @@
 ﻿using Terraria.ID;
 using UnlimitedPotionsBuffs.AbstractItems;
 
-namespace UnlimitedPotisBuff.Vanilla {
+namespace UnlimitedPotionsBuffs.Vanilla {
     public class TitanPotion : VanillaItemBase {
 
         protected override int GetItemId() {

@@ -2,10 +2,10 @@
 using Terraria;
 using Terraria.ModLoader;
 using UnlimitedPotionsBuffs.AbstractItems;
-using UnlimitedPotisBuff.Ingredients.GemsLock;
+using UnlimitedPotionsBuffs.Ingredients.GemsLock;
 using static Terraria.ModLoader.ModContent;
 
-namespace UnlimitedPotisBuff.Custom.LifeCrystal {
+namespace UnlimitedPotionsBuffs.Custom.LifeCrystal {
     class LifeCrystal : CustomItemBase {
         protected int ItemId => ItemID.HeartLantern;
         protected override string GetName() {

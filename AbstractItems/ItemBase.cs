@@ -1,7 +1,7 @@
 ﻿using Terraria.ModLoader;
 
 
-namespace UnlimitedPotisBuff.Items {
+namespace UnlimitedPotionsBuffs.Items {
     public abstract class ItemBase : ModItem {
         protected abstract int GetRarityId();
         protected abstract int GetTileId();

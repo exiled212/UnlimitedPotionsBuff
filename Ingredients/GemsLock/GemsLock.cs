@@ -2,7 +2,7 @@
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace UnlimitedPotisBuff.Ingredients.GemsLock {
+namespace UnlimitedPotionsBuffs.Ingredients.GemsLock {
     class GemsLock : ModItem {
 
         public override void SetStaticDefaults() {

@@ -2,10 +2,10 @@
 using Terraria;
 using Terraria.ModLoader;
 using UnlimitedPotionsBuffs.AbstractItems;
-using UnlimitedPotisBuff.Ingredients.GemsLock;
+using UnlimitedPotionsBuffs.Ingredients.GemsLock;
 using static Terraria.ModLoader.ModContent;
 
-namespace UnlimitedPotisBuff.Custom.FireHeartCrystal {
+namespace UnlimitedPotionsBuffs.Custom.FireHeartCrystal {
     class FireHeartCrystal : CustomItemBase {
         protected int ItemId => ItemID.LifeCrystal;
         protected int BuffId => BuffID.Campfire;

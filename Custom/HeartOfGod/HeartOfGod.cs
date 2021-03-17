@@ -2,10 +2,10 @@
 using Terraria.ID;
 using Terraria.ModLoader;
 using UnlimitedPotionsBuffs.AbstractItems;
-using UnlimitedPotisBuff.Vanilla;
+using UnlimitedPotionsBuffs.Vanilla;
 using static Terraria.ModLoader.ModContent;
 
-namespace UnlimitedPotisBuff.Custom.HeartOfGod {
+namespace UnlimitedPotionsBuffs.Custom.HeartOfGod {
     class HeartOfGod : CustomItemBase {
 
         protected override string GetName() {
