@@ -6,11 +6,11 @@ namespace UnlimitedPotionsBuffs.CalamityMod {
     class ZenPotion : CalamityItemBase {
 
         protected override string GetItemName() {
-            return "TitanScalePotion";
+            return "ZenPotion";
         }
 
         protected override string GetBuffName() {
-            return "TitanScale";
+            return "Zen";
         }
 
         protected override int GetRarityId() {

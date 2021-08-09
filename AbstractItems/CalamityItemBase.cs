@@ -3,6 +3,9 @@ using static Terraria.ModLoader.ModContent;
 using Terraria.ModLoader;
 using UnlimitedPotionsBuffs.Ingredients.GemsLock;
 using Terraria;
+using System.Collections.Generic;
+using Terraria.Localization;
+using Terraria.ID;
 
 namespace UnlimitedPotionsBuffs.AbstractItems {
     public abstract class CalamityItemBase : ItemBase {
@@ -16,7 +19,10 @@ namespace UnlimitedPotionsBuffs.AbstractItems {
 
         public override void SetStaticDefaults() {
             if (CalamityMod != null) {
-                Tooltip.SetDefault("Esta reliquia te provee de su poder con solo tenerla");
+                ModBuff currentBuff = CalamityMod.GetBuff(GetBuffName());
+                string descriptionBuff = currentBuff.Description.GetTranslation(GameCulture.Spanish);
+                description += "\n\t" + descriptionBuff;
+                Tooltip.SetDefault(description);
             }
         }
 
@@ -25,7 +31,7 @@ namespace UnlimitedPotionsBuffs.AbstractItems {
                 int itemId = CalamityMod.ItemType(GetItemName());
                 Item baseItem = new Item();
                 baseItem.SetDefaults(itemId);
-                item.SetNameOverride("Concentrado de " + baseItem.Name);
+                item.SetNameOverride(baseItem.Name + nameBase);
                 item.width = baseItem.width;
                 item.height = baseItem.height;
                 item.value = Item.sellPrice(platinum: 1);
@@ -34,18 +40,58 @@ namespace UnlimitedPotionsBuffs.AbstractItems {
             }
         }
 
-        public override void AddRecipes() {
-            if (CalamityMod != null) {
-                int itemId = CalamityMod.ItemType(GetItemName());
-                ModRecipe recipe = new ModRecipe(mod);
-                recipe.AddIngredient(itemId, 30);
-                AddIngredients(recipe);
-                recipe.AddIngredient(ItemType<GemsLock>(), 1);
-                recipe.AddTile(GetTileId());
-                recipe.SetResult(this);
-                recipe.AddRecipe();
-            }
+        protected override List<RecipeData> RecipesData() {
+            int itemId = CalamityMod.ItemType(GetItemName());
+            int maxStacks = 30; //I not use maxStak from itemId because is 999 stacks.
+            return new List<RecipeData> {
+                new RecipeData(GetTileId(), new List<RecipeData.ItemData>{
+                    new RecipeData.ItemData(itemId, 1),
+                    new RecipeData.ItemData(ItemType<GemsLock>(), 1)
+                }),
+                new RecipeData(GetTileId(), new List<RecipeData.ItemData>{
+                    new RecipeData.ItemData(itemId, maxStacks),
+                    new RecipeData.ItemData(ItemID.LargeAmber, 1)
+                }),
+                new RecipeData(GetTileId(), new List<RecipeData.ItemData>{
+                    new RecipeData.ItemData(itemId, maxStacks),
+                    new RecipeData.ItemData(ItemID.LargeAmethyst, 1)
+                }),
+                new RecipeData(GetTileId(), new List<RecipeData.ItemData>{
+                    new RecipeData.ItemData(itemId, maxStacks),
+                    new RecipeData.ItemData(ItemID.LargeDiamond, 1)
+                }),
+                new RecipeData(GetTileId(), new List<RecipeData.ItemData>{
+                    new RecipeData.ItemData(itemId, maxStacks),
+                    new RecipeData.ItemData(ItemID.LargeEmerald, 1)
+                }),
+                new RecipeData(GetTileId(), new List<RecipeData.ItemData>{
+                    new RecipeData.ItemData(itemId, maxStacks),
+                    new RecipeData.ItemData(ItemID.LargeRuby, 1)
+                }),
+                new RecipeData(GetTileId(), new List<RecipeData.ItemData>{
+                    new RecipeData.ItemData(itemId, maxStacks),
+                    new RecipeData.ItemData(ItemID.LargeSapphire, 1)
+                }),
+                new RecipeData(GetTileId(), new List<RecipeData.ItemData>{
+                    new RecipeData.ItemData(itemId, maxStacks),
+                    new RecipeData.ItemData(ItemID.LargeTopaz, 1)
+                })
+            };
+        }
 
+        public override void AddRecipes() {
+            foreach (RecipeData recipeData in RecipesData()) {
+                if (recipeData.ItemsData.Count > 0) {
+                    ModRecipe recipe = new ModRecipe(mod);
+                    recipe.AddTile(recipeData.TileId);
+                    recipe.SetResult(this);
+                    foreach (RecipeData.ItemData itemData in recipeData.ItemsData) {
+                        recipe.AddIngredient(itemData.ItemId, itemData.Stack);
+                    }
+                    AddIngredients(recipe);
+                    recipe.AddRecipe();
+                }
+            }
         }
 
         protected abstract void AddIngredients(ModRecipe recipe);

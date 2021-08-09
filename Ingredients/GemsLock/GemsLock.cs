@@ -6,8 +6,8 @@ namespace UnlimitedPotionsBuffs.Ingredients.GemsLock {
     class GemsLock : ModItem {
 
         public override void SetStaticDefaults() {
-            DisplayName.SetDefault("Adorno de gemas");
-            Tooltip.SetDefault("Un adorno creado con todas las gemas grandes, contiene un misterioso poder.");
+            DisplayName.SetDefault("Ópalo");
+            Tooltip.SetDefault("Esta gema se puede usar de catalizador para solidificar sustancias químicas.");
         }
 
         public override void SetDefaults() {
@@ -27,7 +27,7 @@ namespace UnlimitedPotionsBuffs.Ingredients.GemsLock {
             recipe.AddIngredient(ItemID.LargeRuby, 1);
             recipe.AddIngredient(ItemID.LargeSapphire, 1);
             recipe.AddIngredient(ItemID.LargeTopaz, 1);
-            recipe.AddTile(TileID.Hellforge);
+            recipe.AddTile(TileID.AlchemyTable);
             recipe.SetResult(this);
             recipe.AddRecipe();
         }
