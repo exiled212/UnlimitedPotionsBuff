@@ -1,21 +1,23 @@
 ﻿using Terraria.ID;
 using Terraria;
-using Terraria.ModLoader;
 using UnlimitedPotionsBuffs.AbstractItems;
-using UnlimitedPotisBuff.Ingredients.GemsLock;
+using UnlimitedPotionsBuffs.Ingredients.GemsLock;
 using static Terraria.ModLoader.ModContent;
+using System.Collections.Generic;
 
-namespace UnlimitedPotisBuff.Custom.FireHeartCrystal {
+namespace UnlimitedPotionsBuffs.Custom.FireHeartCrystal {
     class FireHeartCrystal : CustomItemBase {
         protected int ItemId => ItemID.LifeCrystal;
-        protected int BuffId => BuffID.Campfire;
+        protected override List<int> GetBuffIdList() {
+            return new List<int>{ BuffID.Campfire };
+        }
 
         protected override string GetName() {
-            return "Reliquia del corazón de fuego";
+            return "Reliquia de fuego cristalizada";
         }
 
         protected override string GetDescription() {
-            return "Esta reliquia te provee de su poder con solo tenerla";
+            return "Sientes que te abraza el calor de una fogata.\n\tTe provee el buff de la fogata";
         }
 
         protected override int GetRarityId() {
@@ -34,15 +36,14 @@ namespace UnlimitedPotisBuff.Custom.FireHeartCrystal {
             item.value = Item.sellPrice(platinum: 1);
         }
 
-        protected override ModRecipe ConfigureRecipe() {
-            ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(ItemId, 20);
-            recipe.AddIngredient(ItemType<GemsLock>(), 1);
-            return recipe;
+        protected override List<RecipeData> RecipesData() {
+            return new List<RecipeData> {
+                new RecipeData(GetTileId(), new List<RecipeData.ItemData> {
+                    new RecipeData.ItemData(ItemId, 20),
+                    new RecipeData.ItemData(ItemType<GemsLock>(), 1)
+                })
+            };
         }
 
-        protected override void SetBuffs(Player player) {
-            player.AddBuff(BuffId, 1, false);
-        }
     }
 }

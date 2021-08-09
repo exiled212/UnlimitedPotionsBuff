@@ -1,19 +1,29 @@
-﻿using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
+﻿using Terraria.ID;
+using Terraria;
 using UnlimitedPotionsBuffs.AbstractItems;
-using UnlimitedPotisBuff.Vanilla;
+using UnlimitedPotionsBuffs.Vanilla;
 using static Terraria.ModLoader.ModContent;
+using System.Collections.Generic;
 
-namespace UnlimitedPotisBuff.Custom.HeartOfGod {
+namespace UnlimitedPotionsBuffs.Custom.HeartOfGod {
     class HeartOfGod : CustomItemBase {
 
         protected override string GetName() {
-            return "Corazón de los dioses";
+            return "Reliquia de tiempo cristalizada";
+        }
+
+        protected override List<int> GetBuffIdList() {
+            return new List<int> {
+                BuffID.HeartLamp,
+                BuffID.Honey,
+                BuffID.Campfire,
+                BuffID.DryadsWard,
+                BuffID.Regeneration
+            };
         }
 
         protected override string GetDescription() {
-            return "Esta reliquia te provee de su poder con solo tenerla";
+            return "Este objeto te permitira disfrutar de la vida eterna.\n\tTe otorga todos los buffs de regeneración de vida.";
         }
 
         protected override int GetRarityId() {
@@ -21,7 +31,7 @@ namespace UnlimitedPotisBuff.Custom.HeartOfGod {
         }
 
         protected override int GetTileId() {
-            return TileID.AlchemyTable;
+            return TileID.LunarCraftingStation;
         }
 
         protected override void ConfigItem() {
@@ -32,21 +42,16 @@ namespace UnlimitedPotisBuff.Custom.HeartOfGod {
             item.value = Item.sellPrice(platinum: 1);
         }
 
-        protected override ModRecipe ConfigureRecipe() {
-            ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(ItemType<FireHeartCrystal.FireHeartCrystal>(), 1);
-            recipe.AddIngredient(ItemType<LifeCrystal.LifeCrystal>(), 1);
-            recipe.AddIngredient(ItemType<HoneyHeartCrystal.HoneyHeartCrystal>(), 1);
-            recipe.AddIngredient(ItemType<RegenerationPotion>(), 1);
-            return recipe;
+        protected override List<RecipeData> RecipesData() {
+            return new List<RecipeData> {
+                new RecipeData(GetTileId(), new List<RecipeData.ItemData> {
+                    new RecipeData.ItemData(ItemType<FireHeartCrystal.FireHeartCrystal>(), 1),
+                    new RecipeData.ItemData(ItemType<LifeCrystal.LifeCrystal>(), 1),
+                    new RecipeData.ItemData(ItemType<HoneyHeartCrystal.HoneyHeartCrystal>(), 1),
+                    new RecipeData.ItemData(ItemType<RegenerationPotion>(), 1)
+                })
+            };
         }
 
-        protected override void SetBuffs(Player player) {
-            player.AddBuff(BuffID.HeartLamp, 1, false);
-            player.AddBuff(BuffID.Honey, 1, false);
-            player.AddBuff(BuffID.Campfire, 1, false);
-            player.AddBuff(BuffID.DryadsWard, 1, false);
-            player.AddBuff(BuffID.Regeneration, 1, false);
-        }
     }
 }

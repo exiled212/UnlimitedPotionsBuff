@@ -1,22 +1,25 @@
 ﻿using Terraria.ID;
 using Terraria;
-using Terraria.ModLoader;
 using UnlimitedPotionsBuffs.AbstractItems;
-using UnlimitedPotisBuff.Ingredients.GemsLock;
+using UnlimitedPotionsBuffs.Ingredients.GemsLock;
 using static Terraria.ModLoader.ModContent;
+using System.Collections.Generic;
 
-namespace UnlimitedPotisBuff.Custom.HoneyHeartCrystal {
+namespace UnlimitedPotionsBuffs.Custom.HoneyHeartCrystal {
     class HoneyHeartCrystal : CustomItemBase {
 
         protected int ItemId => ItemID.LifeCrystal;
-        protected int BuffId => BuffID.Honey;
+
+        protected override List<int> GetBuffIdList() {
+            return new List<int>{ BuffID.Honey };
+        }
 
         protected override string GetName() {
-            return "Reliquia de corazón de miel cristalizada";
+            return "Reliquia de miel cristalizada";
         }
 
         protected override string GetDescription() {
-            return "Esta reliquia te provee de su poder con solo tenerla";
+            return "Un cristal que segrega miel con propiedades curativas.\n\tTe proporciona el buff de la miel.";
         }
 
         protected override int GetRarityId() {
@@ -35,18 +38,14 @@ namespace UnlimitedPotisBuff.Custom.HoneyHeartCrystal {
             item.value = Item.sellPrice(platinum: 1);
         }
 
-        protected override ModRecipe ConfigureRecipe() {
-            ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(ItemID.BottledHoney, 30);
-            recipe.AddIngredient(ItemID.HoneyCandelabra, 1);
-            recipe.AddIngredient(ItemID.HoneyCandle, 1);
-            recipe.AddIngredient(ItemID.HoneyLamp, 1);
-            recipe.AddIngredient(ItemType<GemsLock>(), 1);
-            return recipe;
-        }
-
-        protected override void SetBuffs(Player player) {
-            player.AddBuff(BuffId, 1, false);
+        protected override List<RecipeData> RecipesData() {
+            return new List<RecipeData> {
+                new RecipeData(GetTileId(), new List<RecipeData.ItemData>{
+                    new RecipeData.ItemData(ItemID.BottledHoney, 30),
+                    new RecipeData.ItemData(ItemID.SuperHealingPotion, 30),
+                    new RecipeData.ItemData(ItemType<GemsLock>(), 1)
+                })
+            };
         }
     }
 }
