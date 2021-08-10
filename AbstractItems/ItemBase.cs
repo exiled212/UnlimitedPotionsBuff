@@ -5,6 +5,7 @@ namespace UnlimitedPotionsBuffs.Items {
     public abstract class ItemBase : ModItem {
 
         protected string description = "Parece que el contenido de la posión se cristalizo.";
+
         protected string nameBase = " cristalizada";
 
         protected abstract int GetRarityId();

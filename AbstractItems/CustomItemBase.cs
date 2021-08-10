@@ -22,6 +22,10 @@ namespace UnlimitedPotionsBuffs.AbstractItems {
         public override void SetDefaults() {
             item.SetNameOverride(GetName());
             item.rare = GetRarityId();
+            item.width = 14;
+            item.height = 24;
+            item.accessory = true;
+            item.consumable = false;
             item.maxStack = 1;
             ConfigItem();
         }

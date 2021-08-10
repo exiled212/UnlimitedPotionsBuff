@@ -34,6 +34,8 @@ namespace UnlimitedPotionsBuffs.AbstractItems {
                 item.SetNameOverride(baseItem.Name + nameBase);
                 item.width = baseItem.width;
                 item.height = baseItem.height;
+                item.accessory = true;
+                item.consumable = false;
                 item.value = Item.sellPrice(platinum: 1);
                 item.rare = GetRarityId();
                 item.maxStack = 1;
