@@ -99,7 +99,7 @@ namespace UnlimitedPotionsBuffs.AbstractItems {
         protected abstract void AddIngredients(ModRecipe recipe);
 
         public override void UpdateInventory(Player player) {
-            if (CalamityMod != null) {
+            if (CalamityMod != null && item.favorited) {
                 int buffId = CalamityMod.BuffType(GetBuffName());
                 player.AddBuff(buffId, 1, false);
             }

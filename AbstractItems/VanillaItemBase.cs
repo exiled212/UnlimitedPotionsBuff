@@ -77,7 +77,9 @@ namespace UnlimitedPotionsBuffs.AbstractItems {
 
 
         public override void UpdateInventory(Player player) {
-            player.AddBuff(GetBuffId(), 1, false);
+            if (item.favorited) {
+                player.AddBuff(GetBuffId(), 1, false);
+            }
         }
     }
 }

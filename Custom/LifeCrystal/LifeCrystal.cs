@@ -18,7 +18,7 @@ namespace UnlimitedPotionsBuffs.Custom.LifeCrystal {
         }
 
         protected override string GetDescription() {
-            return "Esta piedra emite una luz que purifica el cuerpo y espiritu.\n\tTe proporciona el buff de las linternas de corazón.";
+            return "Esta piedra emite una luz que purifica el cuerpo y espiritu.\n\tMarque el objeto como favorito para activar su efecto.\n\tTe proporciona el buff de las linternas de corazón.";
         }
 
         protected override int GetRarityId() {

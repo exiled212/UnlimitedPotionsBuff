@@ -17,7 +17,7 @@ namespace UnlimitedPotionsBuffs.Custom.FireHeartCrystal {
         }
 
         protected override string GetDescription() {
-            return "Sientes que te abraza el calor de una fogata.\n\tTe provee el buff de la fogata";
+            return "Sientes que te abraza el calor de una fogata.\n\tMarque el objeto como favorito para activar su efecto.\n\tTe provee el buff de la fogata";
         }
 
         protected override int GetRarityId() {

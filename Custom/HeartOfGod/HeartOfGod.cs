@@ -23,7 +23,7 @@ namespace UnlimitedPotionsBuffs.Custom.HeartOfGod {
         }
 
         protected override string GetDescription() {
-            return "Este objeto te permitira disfrutar de la vida eterna.\n\tTe otorga todos los buffs de regeneración de vida.";
+            return "Este objeto te permitira disfrutar de la vida eterna.\n\tMarque el objeto como favorito para activar su efecto.\n\tTe otorga todos los buffs de regeneración de vida.";
         }
 
         protected override int GetRarityId() {

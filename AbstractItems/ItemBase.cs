@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 namespace UnlimitedPotionsBuffs.Items {
     public abstract class ItemBase : ModItem {
 
-        protected string description = "Parece que el contenido de la posión se cristalizo.";
+        protected string description = "Parece que el contenido de la posión se cristalizo.\n\tMarque el objeto como favorito para activar su efecto.";
 
         protected string nameBase = " cristalizada";
 

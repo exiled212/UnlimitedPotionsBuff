@@ -19,7 +19,7 @@ namespace UnlimitedPotionsBuffs.Custom.HoneyHeartCrystal {
         }
 
         protected override string GetDescription() {
-            return "Un cristal que segrega miel con propiedades curativas.\n\tTe proporciona el buff de la miel.";
+            return "Un cristal que segrega miel con propiedades curativas.\n\tMarque el objeto como favorito para activar su efecto.\n\tTe proporciona el buff de la miel.";
         }
 
         protected override int GetRarityId() {
@@ -42,7 +42,7 @@ namespace UnlimitedPotionsBuffs.Custom.HoneyHeartCrystal {
             return new List<RecipeData> {
                 new RecipeData(GetTileId(), new List<RecipeData.ItemData>{
                     new RecipeData.ItemData(ItemID.BottledHoney, 30),
-                    new RecipeData.ItemData(ItemID.SuperHealingPotion, 30),
+                    new RecipeData.ItemData(ItemID.GreaterHealingPotion, 30),
                     new RecipeData.ItemData(ItemType<GemsLock>(), 1)
                 })
             };

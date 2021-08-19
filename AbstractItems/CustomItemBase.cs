@@ -31,8 +31,10 @@ namespace UnlimitedPotionsBuffs.AbstractItems {
         }
 
         public override void UpdateInventory(Player player) {
-            foreach(int buffId in GetBuffIdList()) {
-                player.AddBuff(buffId, 1, false);
+            if (item.favorited) {
+                foreach (int buffId in GetBuffIdList()) {
+                    player.AddBuff(buffId, 1, false);
+                }
             }
         }
     }
