@@ -1,1 +1,1 @@
-Puede crear objetos que te den los buffs de las pociones mientras esten en tu inventario
+Este mod agrega nuevos objetos que te proveen el buff de las pociones mientras los tengas en el inventario.

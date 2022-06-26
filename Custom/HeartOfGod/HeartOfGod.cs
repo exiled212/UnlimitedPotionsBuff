@@ -23,7 +23,7 @@ namespace UnlimitedPotionsBuffs.Custom.HeartOfGod {
         }
 
         protected override string GetDescription() {
-            return "Este objeto te permitira disfrutar de la vida eterna.\n\tTe otorga todos los buffs de regeneración de vida.";
+            return "Este objeto te permitira disfrutar de la vida eterna.\n\tMarque el objeto como favorito para activar su efecto.\n\tTe otorga todos los buffs de regeneración de vida.";
         }
 
         protected override int GetRarityId() {
@@ -35,11 +35,11 @@ namespace UnlimitedPotionsBuffs.Custom.HeartOfGod {
         }
 
         protected override void ConfigItem() {
-            Item baseItem = new Item();
+            Item baseItem = new();
             baseItem.SetDefaults(ItemID.LifeCrystal);
-            item.width = baseItem.width;
-            item.height = baseItem.height;
-            item.value = Item.sellPrice(platinum: 1);
+            Item.width = baseItem.width;
+            Item.height = baseItem.height;
+            Item.value = Item.sellPrice(platinum: 1);
         }
 
         protected override List<RecipeData> RecipesData() {

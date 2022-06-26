@@ -11,10 +11,10 @@ namespace UnlimitedPotionsBuffs.AbstractItems {
         protected abstract int GetItemId();
         protected abstract int GetBuffId();
 
-        public override string Texture => "Terraria/Item_" + GetItemId();
+        public override string Texture => "Terraria/Images/Item_" + GetItemId();
 
         public override void SetStaticDefaults() {
-            Item baseItem = new Item();
+            Item baseItem = new();
             baseItem.SetDefaults(GetItemId());
             ItemTooltip itemToolTip = baseItem.ToolTip;
             for (int i = 0; itemToolTip.Lines > i; i++) {
@@ -24,18 +24,20 @@ namespace UnlimitedPotionsBuffs.AbstractItems {
         }
 
         public override void SetDefaults() {
-            Item baseItem = new Item();
+            Item baseItem = new();
             baseItem.SetDefaults(GetItemId());
-            item.SetNameOverride(baseItem.Name + nameBase);
-            item.width = baseItem.width;
-            item.height = baseItem.height;
-            item.value = Item.sellPrice(platinum: 1);
-            item.rare = GetRarityId();
-            item.maxStack = 1;
+            Item.SetNameOverride(baseItem.Name + nameBase);
+            Item.width = baseItem.width;
+            Item.height = baseItem.height;
+            Item.accessory = true;
+            Item.consumable = false;
+            Item.value = Item.sellPrice(platinum: 1);
+            Item.rare = GetRarityId();
+            Item.maxStack = 1;
         }
 
         protected override List<RecipeData> RecipesData(){
-            Item baseItem = new Item();
+            Item baseItem = new();
             baseItem.SetDefaults(GetItemId());
             return new List<RecipeData> { 
                 new RecipeData(GetTileId(), new List<RecipeData.ItemData>{ 
@@ -75,7 +77,9 @@ namespace UnlimitedPotionsBuffs.AbstractItems {
 
 
         public override void UpdateInventory(Player player) {
-            player.AddBuff(GetBuffId(), 1, false);
+            if (Item.favorited) {
+                player.AddBuff(GetBuffId(), 1, false);
+            }
         }
     }
 }

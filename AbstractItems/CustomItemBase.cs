@@ -6,8 +6,6 @@ using System.Collections.Generic;
 namespace UnlimitedPotionsBuffs.AbstractItems {
     public abstract class CustomItemBase : ItemBase {
 
-        protected Mod CalamityMod = ModLoader.GetMod("CalamityMod");
-
         protected abstract string GetName();
         protected abstract string GetDescription();
 
@@ -20,15 +18,21 @@ namespace UnlimitedPotionsBuffs.AbstractItems {
         }
 
         public override void SetDefaults() {
-            item.SetNameOverride(GetName());
-            item.rare = GetRarityId();
-            item.maxStack = 1;
+            Item.SetNameOverride(GetName());
+            Item.rare = GetRarityId();
+            Item.width = 14;
+            Item.height = 24;
+            Item.accessory = true;
+            Item.consumable = false;
+            Item.maxStack = 1;
             ConfigItem();
         }
 
         public override void UpdateInventory(Player player) {
-            foreach(int buffId in GetBuffIdList()) {
-                player.AddBuff(buffId, 1, false);
+            if (Item.favorited) {
+                foreach (int buffId in GetBuffIdList()) {
+                    player.AddBuff(buffId, 1, false);
+                }
             }
         }
     }

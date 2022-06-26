@@ -7,7 +7,7 @@ using System.Collections.Generic;
 
 namespace UnlimitedPotionsBuffs.Custom.FireHeartCrystal {
     class FireHeartCrystal : CustomItemBase {
-        protected int ItemId => ItemID.LifeCrystal;
+        protected static int ItemId => ItemID.LifeCrystal;
         protected override List<int> GetBuffIdList() {
             return new List<int>{ BuffID.Campfire };
         }
@@ -17,7 +17,7 @@ namespace UnlimitedPotionsBuffs.Custom.FireHeartCrystal {
         }
 
         protected override string GetDescription() {
-            return "Sientes que te abraza el calor de una fogata.\n\tTe provee el buff de la fogata";
+            return "Sientes que te abraza el calor de una fogata.\n\tMarque el objeto como favorito para activar su efecto.\n\tTe provee el buff de la fogata";
         }
 
         protected override int GetRarityId() {
@@ -29,11 +29,11 @@ namespace UnlimitedPotionsBuffs.Custom.FireHeartCrystal {
         }
 
         protected override void ConfigItem() {
-            Item baseItem = new Item();
+            Item baseItem = new();
             baseItem.SetDefaults(ItemId);
-            item.width = baseItem.width;
-            item.height = baseItem.height;
-            item.value = Item.sellPrice(platinum: 1);
+            Item.width = baseItem.width;
+            Item.height = baseItem.height;
+            Item.value = Item.sellPrice(platinum: 1);
         }
 
         protected override List<RecipeData> RecipesData() {

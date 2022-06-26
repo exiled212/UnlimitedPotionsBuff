@@ -1,10 +1,12 @@
 ﻿using System.Collections.Generic;
+using Terraria;
 using Terraria.ModLoader;
 
 namespace UnlimitedPotionsBuffs.Items {
     public abstract class ItemBase : ModItem {
 
-        protected string description = "Parece que el contenido de la posión se cristalizo.";
+        protected string description = "Parece que el contenido de la posión se cristalizo.\n\tMarque el objeto como favorito para activar su efecto.";
+
         protected string nameBase = " cristalizada";
 
         protected abstract int GetRarityId();
@@ -15,13 +17,12 @@ namespace UnlimitedPotionsBuffs.Items {
         public override void AddRecipes() {
             foreach (RecipeData recipeData in RecipesData()) {
                 if (recipeData.ItemsData.Count > 0) {
-                    ModRecipe recipe = new ModRecipe(mod);
+                    Recipe recipe = CreateRecipe();
                     recipe.AddTile(recipeData.TileId);
-                    recipe.SetResult(this);
                     foreach (RecipeData.ItemData itemData in recipeData.ItemsData) {
                         recipe.AddIngredient(itemData.ItemId, itemData.Stack);
                     }
-                    recipe.AddRecipe();
+                    recipe.Register();
                 }
             }
         }

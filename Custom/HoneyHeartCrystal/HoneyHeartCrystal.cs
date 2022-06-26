@@ -8,7 +8,7 @@ using System.Collections.Generic;
 namespace UnlimitedPotionsBuffs.Custom.HoneyHeartCrystal {
     class HoneyHeartCrystal : CustomItemBase {
 
-        protected int ItemId => ItemID.LifeCrystal;
+        protected static int ItemId => ItemID.LifeCrystal;
 
         protected override List<int> GetBuffIdList() {
             return new List<int>{ BuffID.Honey };
@@ -19,7 +19,7 @@ namespace UnlimitedPotionsBuffs.Custom.HoneyHeartCrystal {
         }
 
         protected override string GetDescription() {
-            return "Un cristal que segrega miel con propiedades curativas.\n\tTe proporciona el buff de la miel.";
+            return "Un cristal que segrega miel con propiedades curativas.\n\tMarque el objeto como favorito para activar su efecto.\n\tTe proporciona el buff de la miel.";
         }
 
         protected override int GetRarityId() {
@@ -33,16 +33,16 @@ namespace UnlimitedPotionsBuffs.Custom.HoneyHeartCrystal {
         protected override void ConfigItem() {
             Item baseItem = new Item();
             baseItem.SetDefaults(ItemId);
-            item.width = baseItem.width;
-            item.height = baseItem.height;
-            item.value = Item.sellPrice(platinum: 1);
+            Item.width = baseItem.width;
+            Item.height = baseItem.height;
+            Item.value = Item.sellPrice(platinum: 1);
         }
 
         protected override List<RecipeData> RecipesData() {
             return new List<RecipeData> {
                 new RecipeData(GetTileId(), new List<RecipeData.ItemData>{
                     new RecipeData.ItemData(ItemID.BottledHoney, 30),
-                    new RecipeData.ItemData(ItemID.SuperHealingPotion, 30),
+                    new RecipeData.ItemData(ItemID.GreaterHealingPotion, 30),
                     new RecipeData.ItemData(ItemType<GemsLock>(), 1)
                 })
             };
