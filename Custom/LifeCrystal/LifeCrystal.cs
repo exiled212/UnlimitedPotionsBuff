@@ -7,7 +7,7 @@ using System.Collections.Generic;
 
 namespace UnlimitedPotionsBuffs.Custom.LifeCrystal {
     class LifeCrystal : CustomItemBase {
-        protected int ItemId => ItemID.HeartLantern;
+        protected static int ItemId => ItemID.HeartLantern;
 
         protected override List<int> GetBuffIdList() {
             return new List<int>{ BuffID.HeartLamp };
@@ -30,11 +30,11 @@ namespace UnlimitedPotionsBuffs.Custom.LifeCrystal {
         }
 
         protected override void ConfigItem() {
-            Item baseItem = new Item();
+            Item baseItem = new();
             baseItem.SetDefaults(ItemId);
-            item.width = baseItem.width;
-            item.height = baseItem.height;
-            item.value = Item.sellPrice(platinum: 1);
+            Item.width = baseItem.width;
+            Item.height = baseItem.height;
+            Item.value = Item.sellPrice(platinum: 1);
         }
 
         protected override List<RecipeData> RecipesData() {

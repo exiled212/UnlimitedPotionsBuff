@@ -35,11 +35,11 @@ namespace UnlimitedPotionsBuffs.Custom.HeartOfGod {
         }
 
         protected override void ConfigItem() {
-            Item baseItem = new Item();
+            Item baseItem = new();
             baseItem.SetDefaults(ItemID.LifeCrystal);
-            item.width = baseItem.width;
-            item.height = baseItem.height;
-            item.value = Item.sellPrice(platinum: 1);
+            Item.width = baseItem.width;
+            Item.height = baseItem.height;
+            Item.value = Item.sellPrice(platinum: 1);
         }
 
         protected override List<RecipeData> RecipesData() {

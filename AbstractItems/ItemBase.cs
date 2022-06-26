@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Terraria;
 using Terraria.ModLoader;
 
 namespace UnlimitedPotionsBuffs.Items {
@@ -16,13 +17,12 @@ namespace UnlimitedPotionsBuffs.Items {
         public override void AddRecipes() {
             foreach (RecipeData recipeData in RecipesData()) {
                 if (recipeData.ItemsData.Count > 0) {
-                    ModRecipe recipe = new ModRecipe(mod);
+                    Recipe recipe = CreateRecipe();
                     recipe.AddTile(recipeData.TileId);
-                    recipe.SetResult(this);
                     foreach (RecipeData.ItemData itemData in recipeData.ItemsData) {
                         recipe.AddIngredient(itemData.ItemId, itemData.Stack);
                     }
-                    recipe.AddRecipe();
+                    recipe.Register();
                 }
             }
         }

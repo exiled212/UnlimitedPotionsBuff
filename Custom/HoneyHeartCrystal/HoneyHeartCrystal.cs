@@ -8,7 +8,7 @@ using System.Collections.Generic;
 namespace UnlimitedPotionsBuffs.Custom.HoneyHeartCrystal {
     class HoneyHeartCrystal : CustomItemBase {
 
-        protected int ItemId => ItemID.LifeCrystal;
+        protected static int ItemId => ItemID.LifeCrystal;
 
         protected override List<int> GetBuffIdList() {
             return new List<int>{ BuffID.Honey };
@@ -33,9 +33,9 @@ namespace UnlimitedPotionsBuffs.Custom.HoneyHeartCrystal {
         protected override void ConfigItem() {
             Item baseItem = new Item();
             baseItem.SetDefaults(ItemId);
-            item.width = baseItem.width;
-            item.height = baseItem.height;
-            item.value = Item.sellPrice(platinum: 1);
+            Item.width = baseItem.width;
+            Item.height = baseItem.height;
+            Item.value = Item.sellPrice(platinum: 1);
         }
 
         protected override List<RecipeData> RecipesData() {

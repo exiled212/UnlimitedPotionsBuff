@@ -11,15 +11,15 @@ namespace UnlimitedPotionsBuffs.Ingredients.GemsLock {
         }
 
         public override void SetDefaults() {
-            item.width = 70;
-            item.height = 70;
-            item.value = Item.sellPrice(gold: 20);
-            item.rare = ItemRarityID.Blue;
-            item.maxStack = 99;
+            Item.width = 70;
+            Item.height = 70;
+            Item.value = Item.sellPrice(gold: 20);
+            Item.rare = ItemRarityID.Blue;
+            Item.maxStack = 99;
         }
 
         public override void AddRecipes() {
-            ModRecipe recipe = new ModRecipe(mod);
+            Recipe recipe = CreateRecipe();
             recipe.AddIngredient(ItemID.LargeAmber, 1);
             recipe.AddIngredient(ItemID.LargeAmethyst, 1);
             recipe.AddIngredient(ItemID.LargeDiamond, 1);
@@ -28,8 +28,7 @@ namespace UnlimitedPotionsBuffs.Ingredients.GemsLock {
             recipe.AddIngredient(ItemID.LargeSapphire, 1);
             recipe.AddIngredient(ItemID.LargeTopaz, 1);
             recipe.AddTile(TileID.AlchemyTable);
-            recipe.SetResult(this);
-            recipe.AddRecipe();
+            recipe.Register();
         }
 
     }
