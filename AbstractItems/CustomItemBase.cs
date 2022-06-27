@@ -1,5 +1,4 @@
 ﻿using UnlimitedPotionsBuffs.Items;
-using Terraria.ModLoader;
 using Terraria;
 using System.Collections.Generic;
 
