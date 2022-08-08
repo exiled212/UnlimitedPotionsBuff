@@ -19,16 +19,15 @@ namespace UnlimitedPotionsBuffs.Ingredients.GemsLock {
         }
 
         public override void AddRecipes() {
-            Recipe recipe = CreateRecipe();
-            recipe.AddIngredient(ItemID.LargeAmber, 1);
-            recipe.AddIngredient(ItemID.LargeAmethyst, 1);
-            recipe.AddIngredient(ItemID.LargeDiamond, 1);
-            recipe.AddIngredient(ItemID.LargeEmerald, 1);
-            recipe.AddIngredient(ItemID.LargeRuby, 1);
-            recipe.AddIngredient(ItemID.LargeSapphire, 1);
-            recipe.AddIngredient(ItemID.LargeTopaz, 1);
-            recipe.AddTile(TileID.AlchemyTable);
-            recipe.Register();
+            CreateRecipe()
+                .AddIngredient( ItemID.LargeAmber, 1 )
+                .AddIngredient( ItemID.LargeAmethyst, 1 )
+                .AddIngredient( ItemID.LargeDiamond, 1 )
+                .AddIngredient( ItemID.LargeEmerald, 1 )
+                .AddIngredient( ItemID.LargeRuby, 1 )
+                .AddIngredient( ItemID.LargeSapphire, 1 )
+                .AddIngredient( ItemID.LargeTopaz, 1 )
+                .Register();
         }
 
     }
