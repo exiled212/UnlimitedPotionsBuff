@@ -17,8 +17,8 @@ namespace UnlimitedPotionsBuffs.Items {
         public override void AddRecipes() {
             foreach (RecipeData recipeData in RecipesData()) {
                 if (recipeData.ItemsData.Count > 0) {
-                    Recipe recipe = CreateRecipe();
-                    recipe.AddTile(recipeData.TileId);
+                    Recipe recipe = CreateRecipe()
+                        .AddTile(recipeData.TileId);
                     foreach (RecipeData.ItemData itemData in recipeData.ItemsData) {
                         recipe.AddIngredient(itemData.ItemId, itemData.Stack);
                     }
